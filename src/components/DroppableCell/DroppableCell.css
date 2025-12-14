@@ -1,0 +1,38 @@
+/* File: src/components/DroppableCell/DroppableCell.css */
+.droppable-cell {
+    min-height: 200px; /* lowered so spanned blocks don't force huge height */
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/* keep empty look when no block present */
+.droppable-cell.empty {
+    background: var(--bg-primary);
+}
+
+.droppable-cell.drop-target {
+    border-color: var(--color-success);
+    border-style: solid;
+    background: #e8f5e9;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.empty-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-success);
+    font-size: 24px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+/* ensure a spanned item visually sits above neighboring grid cells */
+.droppable-cell[style*="grid-column"] {
+    z-index: 2;
+}
