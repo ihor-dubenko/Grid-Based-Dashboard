@@ -1,5 +1,3 @@
-// TypeScript
-// src/context/DashboardContext.tsx
 import React, {
     useState,
     type ReactNode
